@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class CumulativePoetry {
     static String[] arr = {
             "the house that Jack built",
@@ -13,33 +15,34 @@ public class CumulativePoetry {
             "the farmer sowing his corn that kept",
             "this is the horse and the hound and the horn that belonged to"
     };
-    String recite(){
-        String poem="";
-        String text="";
-        for(int i=0;i<12;i++){
-            text+="\nDay "+(i+1)+" -\n";
-            poem=arr[i]+'\n'+'\t'+poem;
-            text+='T'+poem.substring(1,poem.length()-2)+'.'+'\n';
+    String revealForDay(int k)
+    {
+        String Reveal="This is";
+        for(int i=k-1;i>=0;i--)
+            Reveal+=" "+arr[i]+"\n";
+        return Reveal;
+    }
+    String recite()
+    {
+        String Recite="";
+        for(int index=1;index<=12;index++) {
+            Recite+="Day "+index+"\n"+revealForDay(index);
         }
-        return text;
+        return Recite;
     }
-    String reveal(int n){
-        String poem="";
-        String text="";
-        for(int i=0;i<n;i++)
-            poem=arr[i]+'\n'+'\t'+poem;
-        text+='T'+poem.substring(1,poem.length()-2)+'.'+'\n';
-        return text;
-    }
+    public static void main(String args[]){
+        CumulativePoetry t= new CumulativePoetry();
+        boolean reveal_for_Day = Arrays.asList(args).contains("--reveal-for-day");
+        boolean recite = Arrays.asList(args).contains("--recite");
+        if(reveal_for_Day) {
+            int day = Integer.parseInt(Arrays.asList(args).get(Arrays.asList(args).indexOf("--reveal-for-day") + 1));
+            System.out.println(t.revealForDay(day));
+        }
+        else if(recite)
+        {
+            System.out.println(t.recite());
+        }
 
-    public static void main(String args[]) {
-        CumulativePoetry cup=new CumulativePoetry();
-        if(args[0].equals("--reveal-for-day") && Integer.parseInt(args[1])>0 && Integer.parseInt(args[1])<13){
-            System.out.print(cup.reveal(Integer.parseInt(args[1])));
-        }
-        else if(args[0].equals("--recite")){
-            System.out.print(cup.recite());
-        }
     }
 
 }

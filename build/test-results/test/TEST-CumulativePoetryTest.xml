@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CumulativePoetryTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2019-08-08T17:47:21" hostname="in-Jalaludeen" time="0.011">
+  <properties/>
+  <testcase name="revealOfTheDayElevenTest" classname="CumulativePoetryTest" time="0.005"/>
+  <testcase name="revealOfTheDayTweleTest" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="revealOfTheDayEightTest" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="recite" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="revealOfTheDayFiveTest" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="revealOfTheDaySixTest" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="revealOfTheDayNineTest" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="revealOfTheDayFourTest" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="revealOfTheDayTenTest" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="revealOfTheDayOneTest" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="revealOfTheDayTwoTest" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="revealOfTheDayThreeTest" classname="CumulativePoetryTest" time="0.001"/>
+  <testcase name="revealOfTheDaySevenTest" classname="CumulativePoetryTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

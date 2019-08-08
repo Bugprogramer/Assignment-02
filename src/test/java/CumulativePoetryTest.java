@@ -1,123 +1,233 @@
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-public class CumulativePoetryTest {
+public class CumulativePoetryTest{
 
+    CumulativePoetry test = new CumulativePoetry();
     @Test
-    public void recite() {
-        CumulativePoetry cup=new CumulativePoetry();
-        String str="\n" +
-                "Day 1 -\n" +
-                "The house that Jack built.\n" +
-                "\n" +
-                "Day 2 -\n" +
-                "The malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 3 -\n" +
-                "The rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 4 -\n" +
-                "The cat that killed\n" +
-                "\tthe rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 5 -\n" +
-                "The dog that worried\n" +
-                "\tthe cat that killed\n" +
-                "\tthe rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 6 -\n" +
-                "That cow with the crumpled horn that tossed\n" +
-                "\tthe dog that worried\n" +
-                "\tthe cat that killed\n" +
-                "\tthe rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 7 -\n" +
-                "The maiden all forlorn that milked\n" +
-                "\tthat cow with the crumpled horn that tossed\n" +
-                "\tthe dog that worried\n" +
-                "\tthe cat that killed\n" +
-                "\tthe rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 8 -\n" +
-                "The man all tattered and torn that kissed\n" +
-                "\tthe maiden all forlorn that milked\n" +
-                "\tthat cow with the crumpled horn that tossed\n" +
-                "\tthe dog that worried\n" +
-                "\tthe cat that killed\n" +
-                "\tthe rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 9 -\n" +
-                "The priest all shaven and shorn that married\n" +
-                "\tthe man all tattered and torn that kissed\n" +
-                "\tthe maiden all forlorn that milked\n" +
-                "\tthat cow with the crumpled horn that tossed\n" +
-                "\tthe dog that worried\n" +
-                "\tthe cat that killed\n" +
-                "\tthe rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 10 -\n" +
-                "The rooster that crowed in the morn that woke\n" +
-                "\tthe priest all shaven and shorn that married\n" +
-                "\tthe man all tattered and torn that kissed\n" +
-                "\tthe maiden all forlorn that milked\n" +
-                "\tthat cow with the crumpled horn that tossed\n" +
-                "\tthe dog that worried\n" +
-                "\tthe cat that killed\n" +
-                "\tthe rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 11 -\n" +
-                "The farmer sowing his corn that kept\n" +
-                "\tthe rooster that crowed in the morn that woke\n" +
-                "\tthe priest all shaven and shorn that married\n" +
-                "\tthe man all tattered and torn that kissed\n" +
-                "\tthe maiden all forlorn that milked\n" +
-                "\tthat cow with the crumpled horn that tossed\n" +
-                "\tthe dog that worried\n" +
-                "\tthe cat that killed\n" +
-                "\tthe rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n" +
-                "\n" +
-                "Day 12 -\n" +
-                "This is the horse and the hound and the horn that belonged to\n" +
-                "\tthe farmer sowing his corn that kept\n" +
-                "\tthe rooster that crowed in the morn that woke\n" +
-                "\tthe priest all shaven and shorn that married\n" +
-                "\tthe man all tattered and torn that kissed\n" +
-                "\tthe maiden all forlorn that milked\n" +
-                "\tthat cow with the crumpled horn that tossed\n" +
-                "\tthe dog that worried\n" +
-                "\tthe cat that killed\n" +
-                "\tthe rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n";
-        assertEquals(cup.recite(),str);
+    public void revealOfTheDayOneTest()
+    {
+        assertEquals("This is the house that Jack built\n" ,test.revealForDay(1));
+    }
+    @Test
+    public void revealOfTheDayTwoTest()
+    {
+        assertEquals("This is the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(2));
     }
 
     @Test
-    public void reveal() {
-        CumulativePoetry cup=new CumulativePoetry();
-        String str="The rat that ate\n" +
-                "\tthe malth that lay in\n" +
-                "\tthe house that Jack built.\n";
-        assertEquals(cup.reveal(3),str);
+    public void revealOfTheDayThreeTest()
+    {
+        assertEquals("This is the rat that ate\n"+
+                " the malth that lay in\n"+
+                " the house that Jack built\n",test.revealForDay(3));
     }
+
+    @Test
+    public void revealOfTheDayFourTest()
+    {
+        assertEquals("This is the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(4));
+    }
+
+    @Test
+    public void revealOfTheDayFiveTest()
+    {
+        assertEquals("This is the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(5));
+    }
+
+    @Test
+    public void revealOfTheDaySixTest()
+    {
+        assertEquals("This is that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(6));
+    }
+    @Test
+    public void revealOfTheDaySevenTest()
+    {
+        assertEquals("This is the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(7));
+    }
+    @Test
+    public void revealOfTheDayEightTest()
+    {
+        assertEquals("This is the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(8));
+    }
+    @Test
+    public void revealOfTheDayNineTest()
+    {
+        assertEquals("This is the priest all shaven and shorn that married\n" +
+                " the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(9));
+    }
+    @Test
+    public void revealOfTheDayTenTest()
+    {
+        assertEquals("This is the rooster that crowed in the morn that woke\n" +
+                " the priest all shaven and shorn that married\n" +
+                " the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(10));
+    }
+    @Test
+    public void revealOfTheDayElevenTest()
+    {
+        assertEquals("This is the farmer sowing his corn that kept\n" +
+                " the rooster that crowed in the morn that woke\n" +
+                " the priest all shaven and shorn that married\n" +
+                " the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(11));
+    }
+    @Test
+    public void revealOfTheDayTweleTest()
+    {
+        assertEquals("This is this is the horse and the hound and the horn that belonged to\n" +
+                " the farmer sowing his corn that kept\n" +
+                " the rooster that crowed in the morn that woke\n" +
+                " the priest all shaven and shorn that married\n" +
+                " the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.revealForDay(12));
+    }
+    @Test
+    public void recite()
+    {
+        assertEquals("Day 1\n" +
+                "This is the house that Jack built\n" +
+                "Day 2\n" +
+                "This is the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 3\n" +
+                "This is the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 4\n" +
+                "This is the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 5\n" +
+                "This is the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 6\n" +
+                "This is that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 7\n" +
+                "This is the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 8\n" +
+                "This is the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 9\n" +
+                "This is the priest all shaven and shorn that married\n" +
+                " the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 10\n" +
+                "This is the rooster that crowed in the morn that woke\n" +
+                " the priest all shaven and shorn that married\n" +
+                " the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 11\n" +
+                "This is the farmer sowing his corn that kept\n" +
+                " the rooster that crowed in the morn that woke\n" +
+                " the priest all shaven and shorn that married\n" +
+                " the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n" +
+                "Day 12\n" +
+                "This is this is the horse and the hound and the horn that belonged to\n" +
+                " the farmer sowing his corn that kept\n" +
+                " the rooster that crowed in the morn that woke\n" +
+                " the priest all shaven and shorn that married\n" +
+                " the man all tattered and torn that kissed\n" +
+                " the maiden all forlorn that milked\n" +
+                " that cow with the crumpled horn that tossed\n" +
+                " the dog that worried\n" +
+                " the cat that killed\n" +
+                " the rat that ate\n" +
+                " the malth that lay in\n" +
+                " the house that Jack built\n",test.recite());
+    }
+
 }
